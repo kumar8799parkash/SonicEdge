@@ -1,3 +1,32 @@
-li{
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
+/* * {
+    outline: 1px solid red;
+} */
+
+
+li {
     list-style: none;
+}
+
+.nav {
+    position: relative;
+
+}
+
+.brand-name-cont {
+    font-family: "Caveat Brush", cursive;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.main-nav-cont {
+    position: relative;
+    right: 200px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.main-nav-cont * {
+    cursor: pointer;
 }
