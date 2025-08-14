@@ -12,7 +12,21 @@ const Navbar = () => {
         </div>
         <div className="main-nav-cont flex gap-12 ">
           <li><Link href="/">Home</Link></li>
-          <li className='flex '>Categories <img className='w-4' src="/images/dropDown.svg" alt="" /></li>
+
+          <li className='drop-down' ><Link href="/">Categories</Link>
+              <div className="content">
+                <Link className='drop-down-item' href="/">Headphones</Link>
+                <Link className='drop-down-item' href="/">Headphones</Link>
+                <Link className='drop-down-item' href="/">Headphones</Link>
+                <Link className='drop-down-item' href="/">Headphones</Link>
+                <Link className='drop-down-item' href="/">Headphones</Link>
+                <Link className='drop-down-item' href="/">Headphones</Link>
+                <Link className='drop-down-item' href="/">Headphones</Link>
+                <Link className='drop-down-item' href="/">Headphones</Link>
+                <Link className='drop-down-item' href="/">Headphones</Link>
+              </div>
+          </li>
+
           <li><Link href="/">Contact</Link></li>
           <li><Link href="/">About Us</Link></li>
         </div>

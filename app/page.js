@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <>
       <Navbar/>
+      <div className="main h-[500px] w-screen bg-green-950 "></div>
     </>
   );
 }

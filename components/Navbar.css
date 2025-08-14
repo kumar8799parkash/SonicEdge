@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
 
-/* * {
+* {
     outline: 1px solid red;
-} */
+}
 
 
 li {
@@ -27,6 +27,40 @@ li {
     font-size: 14px;
 }
 
-.main-nav-cont * {
+.drop-down-item{
+    position: relative;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
 }
+
+.content{
+    position: absolute;
+    top: calc(100% + 31px);
+    width: 600px;
+    display: none;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.drop-down:hover .content{
+    display: flex;
+}
+
+.drop-down::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    height: 31px;
+    width: 100%;
+}
+
+
+.content *{
+    height: 60px;
+    width: 300px;
+}
+
+
+
