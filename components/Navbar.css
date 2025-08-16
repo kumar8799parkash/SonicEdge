@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
 
-* {
+/* * {
     outline: 1px solid red;
-}
+} */
 
 
 li {
@@ -11,7 +11,6 @@ li {
 
 .nav {
     position: relative;
-
 }
 
 .brand-name-cont {
@@ -21,46 +20,43 @@ li {
 }
 
 .main-nav-cont {
-    position: relative;
-    right: 200px;
+    position: absolute;
+    left: 300px;
     font-weight: 500;
     font-size: 14px;
+    height: 100%;
 }
 
-.drop-down-item{
-    position: relative;
-    cursor: pointer;
+.main-nav-item {
+    height: 100%;
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    padding: 0px 20px;
 }
 
-.content{
+
+.content {
     position: absolute;
-    top: calc(100% + 31px);
-    width: 600px;
+    width: 560px;
+    top: 82px;
+    left: 0px;
     display: none;
     flex-wrap: wrap;
     background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
-.drop-down:hover .content{
+.drop-down:hover .content {
     display: flex;
 }
 
-.drop-down::after{
-    content: "";
-    position: absolute;
-    top: 100%;
-    height: 31px;
-    width: 100%;
-}
 
 
-.content *{
+.drop-down-item {
     height: 60px;
-    width: 300px;
+    width: 280px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
-
-
-

@@ -6,7 +6,9 @@ export default function Home() {
   return (
     <>
       <Navbar/>
-      <div className="main h-[500px] w-screen bg-green-950 "></div>
+      <div className="main-image-cont h-[88vh] w-screen bg-amber-400">
+        <img className="main-image h-[100%] w-[100%]" src="/images/mainImages/mainImage5.webp" alt="" />
+      </div>
     </>
   );
 }
