@@ -11,13 +11,12 @@ const Navbar = () => {
         <div className="brand-cont flex gap-2 items-center">
           <div className="brand-image-cont"><img className='w-[40px]' src="/images/sonicEdgeLogo.png" alt="" /></div>
           <div className="brand-name-cont">Sonic edge</div>
+          <div className="hamburger-cont"><img src="/images/SVGs/hamburger.svg" className='w-7 mr-2 cursor-pointer' alt="" /></div>
         </div>
         <div className="main-nav-cont flex">
 
           <li className='main-nav-item' ><Link href="/">Home</Link></li>
-
           <li className='main-nav-item drop-down' ><Link href="/">Categories</Link> <img className='w-4' src="/images/SVGs/dropDown.svg" alt="" />
-
 
             <div className="content">
               <Link className='drop-down-item' href="/">
@@ -81,8 +80,8 @@ const Navbar = () => {
             <img className='w-5' src="/images/SVGs/search.svg" alt="" />
             <input type="text" className='ml-1 w-[15vw] text-[15px] outline-none' placeholder='Searh the product' />
           </div>
-
-          <img src="/images/SVGs/cart.svg" className='w-7 ml-2 cursor-pointer' alt="" />
+          <img src="/images/SVGs/profile.svg" className=' profile-img w-6 ml-2 cursor-pointer' alt="" />
+          <img src="/images/SVGs/cart.svg" className=' cart-img w-7 ml-2 cursor-pointer' alt="" /> 
         </div>
       </div>
 

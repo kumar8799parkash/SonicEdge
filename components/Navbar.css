@@ -60,3 +60,58 @@ li {
     display: flex;
     align-items: center;
 }
+
+.hamburger-cont{
+    display: none;
+}
+
+@media (max-width : 1050px) {
+    .main-nav-cont{
+        display: none;
+    }
+
+    .hamburger-cont{
+        display: block;
+    }
+
+    .input-cont input{
+        width: 30vw;
+    }
+}
+
+
+@media (max-width : 650px) {
+    .brand-name-cont{
+        display: none;
+    }
+
+    .nav{
+        padding-left: 10px;
+        padding-right: 12px;
+    }
+
+}
+
+@media (max-width : 470px) {
+    .brand-image-cont{
+        display: none;
+    }
+
+    .input-cont input{
+        width: 55vw;
+    }
+
+    .profile-img{
+        margin-left: 0px;
+    }
+    .cart-img{
+        margin-left: 0px;
+    }
+}
+
+@media (max-width : 400px) {
+
+    .input-cont input{
+        width: 45vw;
+    }
+}
