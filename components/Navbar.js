@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="nav  h-[12vh]  w-screen flex items-center px-10 justify-between border-[1px] border-[#cbcbcb]">
+      <div className="nav  h-[12vh]  w-full flex items-center px-[10px] justify-between border-[1px] border-[#cbcbcb]">
         <div className="brand-cont flex gap-2 items-center">
           <div className="brand-image-cont"><img className='w-[40px]' src="/images/sonicEdgeLogo.png" alt="" /></div>
           <div className="brand-name-cont">Sonic edge</div>

@@ -33,9 +33,8 @@ const MainImage = () => {
 
 
     return (
-        <div className="main-image-cont h-auto w-screen bg-amber-400">
+        <div className="main-image-cont h-auto w-full bg-amber-400">
             <img className="main-image h-[100%] w-[100%]" src={mainImagesArray.length > 0 ? (mainImagesArray[mainImageIndex].source) : ("/images/mainImages/mainImage0.webp")} alt="" />
-
         </div>
     )
 }
