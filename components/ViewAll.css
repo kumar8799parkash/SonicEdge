@@ -1,3 +1,8 @@
-*{
+/* *{
     outline: 1px solid red;
 }
+ */
+
+ .songItem{
+    box-shadow: 0px 3px 2px  rgb(199, 199, 199);
+ }

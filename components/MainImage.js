@@ -8,7 +8,7 @@ const MainImage = () => {
 
     useEffect(() => {
         async function fetchMainImages() {
-            const res = await fetch("/images/mainImages.json");
+            const res = await fetch("/JSON-data/mainImages.json");
             const data = await res.json();
             setMainImagesArray(data);
         }
