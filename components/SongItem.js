@@ -3,7 +3,7 @@ import React from 'react'
 const SongItem = (props) => {
   return (
     <div>
-      <div className="songItem h-auto w-[15vw] rounded-[10px] overflow-hidden border-1 border-[#e0e0e07c] bg-[#ececec93]">
+      <div className="songItem h-auto w-[15vw] rounded-[10px] overflow-hidden border-1 border-[#e0e0e07c] bg-[#ececec93] cursor-pointer">
             <div className="song-item-image-cont w-[100%] rounded-[10px] overflow-hidden">
                 <img className='song-item-image aspect-square w-[100%] ' src="/images/Sale images/songItem1.webp" alt="" />
             </div>
