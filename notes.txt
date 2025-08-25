@@ -1,0 +1,82 @@
+What it does:
+
+mongoose.connections is an array of all connections that Mongoose has created.
+
+mongoose.connections[0] is the default connection.
+
+.readyState tells you the state of the connection:
+
+    0 → disconnected
+    1 → connected
+    2 → connecting
+    3 → disconnecting
+
+
+mongoose.connections
+
+mongoose maintains an internal array called connections.
+Every time you call mongoose.connect(...), it creates a new connection object and stores it inside this array.
+
+So:
+connections[0] → the first/default connection (the one you usually use).
+connections[1], connections[2], ... → additional connections if you open multiple DBs.
+
+
+2. connections[0].readyState
+
+Each connection object has a property readyState which shows the status of the connection.
+The possible values are:
+
+0 → disconnected
+1 → connected
+2 → connecting
+3 → disconnecting
+
+if (mongoose.connections[0].readyState) return;
+It means:
+If there is already an active/connecting connection (readyState !== 0),
+then don’t try to connect again → just return.
+
+
+3. Why do we need this check?
+
+In Next.js (and similar frameworks):
+
+The server code can run multiple times (especially in development with hot-reloads, or in serverless deployments like Vercel where functions spin up frequently).
+
+If you call mongoose.connect() every time without checking, you’ll create multiple duplicate connections to MongoDB → which can:
+
+Slow down performance.
+Cause memory leaks.
+Even crash your app with too many connections.
+
+So the check ensures:
+If a connection already exists, reuse it instead of opening a new one.
+
+
+Why would mongoose.connections[1], [2]... exist?
+
+Normally, you only need one database connection (connections[0]).
+You can define multiple schemas/models on that single connection → one DB handles everything.
+connections[1], connections[2], etc. only appear if you intentionally connect to different databases
+
+
+
+✅ So for your case (SonicEdge project):
+
+You don’t need multiple databases.
+
+You just connect once (that’s connections[0]) to sonicEdgeDB.
+Then create multiple schemas/models for:
+
+Products
+
+Users
+
+Orders
+
+Payments
+
+Playlists (if you add Spotify-like features later 😉)
+
+All these live inside the same database.

@@ -43,7 +43,9 @@ export default function Home() {
     <>
       <Navbar />
       <MainImage />
-      <ViewAll heading = {'Sale is Live'}/>
+      <ViewAll contName = {'saleIsLive'}/>
+      <ViewAll contName = {'bigDeals'}/>
+      <ViewAll contName = {'topPicks'}/>
     </>
   );
 }
