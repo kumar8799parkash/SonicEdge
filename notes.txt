@@ -210,3 +210,176 @@ In Mongoose:
 A Schema is the blueprint/shape for documents inside a collection.
 
 A Model is a wrapper created from a schema that maps to a collection.
+
+
+
+
+
+
+
+what is the purpose of route.js (api/products/route.js)
+
+CODE : 
+import { NextResponse } from "next/server";
+import connectDB from "@/lib/mongodb";
+import Product from "@/lib/models/Product";
+
+export async function GET(request){
+    await connectDB();
+    const {searchParams} = new URL(request.url);
+    const category = searchParams.get("category");
+
+    try{
+        let products;
+
+        if(category){
+            products = await Product.find({category});
+        }else{
+            products = await Product.find({});
+        }
+        return NextResponse.json(products);
+    }catch(err){
+        return NextResponse.json({error : err.message} , {status : 500});
+    }
+
+}
+
+
+EXPLAINATION : 
+👉 In simple words:
+        This is an API route that connects to MongoDB and returns products.
+        If a category is specified → fetch only products in that category.
+        If no category is specified → fetch all products.
+
+
+🔹 What is route.js in Next.js?
+        In Next.js (App Router), route.js (or route.ts) is used to define API endpoints.
+        It works similar to Express.js routes, but it’s built-in to Next.js.
+        Instead of making a separate backend server, you can write backend APIs inside your Next.js project itself.
+
+
+🔹 Purpose of route.js
+        It allows you to handle server-side logic (fetching data, connecting to DB, authentication, etc.).
+        It provides API endpoints that frontend code (React components, fetch, axios, etc.) can call.
+        It makes Next.js a full-stack framework (frontend + backend in one project).
+
+
+🔹 Example Use Cases of route.js
+1. Fetch Products (your case):
+CODE:
+    // app/api/products/route.js
+export async function GET() {
+   return NextResponse.json([
+     { id: 1, name: "Guitar" },
+     { id: 2, name: "Drums" }
+   ]);
+}
+
+
+2. Create a New Product (POST)
+
+CODE :
+export async function POST(request) {
+   const body = await request.json();
+   const newProduct = { id: Date.now(), ...body };
+   return NextResponse.json(newProduct, { status: 201 });
+}
+➡️ Now frontend can send a POST request:
+await fetch("/api/products", {
+  method: "POST",
+  body: JSON.stringify({ name: "Piano" })
+});
+
+
+3. Authentication
+CODE:
+// app/api/login/route.js
+export async function POST(request) {
+   const { email, password } = await request.json();
+   if(email === "admin@test.com" && password === "1234") {
+      return NextResponse.json({ message: "Login success" });
+   }
+   return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
+}
+➡️ Used for handling login/signup directly in Next.js.
+
+
+4. Example with Query Params
+
+You already used this, e.g.
+/api/products?category=guitar
+
+Your route.js reads the query and filters products.
+
+
+In summary:
+
+route.js turns your Next.js project into a full-stack app by handling server-side APIs.
+It’s the backend part of Next.js where you can connect to DB, fetch data, handle auth, etc.
+Frontend (/pages or app/) calls these routes using fetch or axios.
+
+
+
+🔹 WHAT IS NEXTRESPONSE?
+
+NextResponse is a helper class provided by Next.js (App Router) to create and control HTTP responses inside route handlers and middleware.
+It’s like the res object in Express.js, but specifically designed for Next.js.
+
+It allows you to:
+Send back JSON, text, or HTML responses.
+Set status codes (e.g., 200, 404, 500).
+Set cookies and headers.
+Redirect users.
+Rewrite URLs.
+
+👉 Basically: NextResponse = Response object (Web API) + Next.js 
+
+
+
+
+FETCH URL EXPLAINATION IN VIEWALL CODE :
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+
+      try {
+        const res = await fetch(`/api/products?category=${props.contName}`);
+        const data = await res.json();
+        setProducts(data);
+      }catch(err){
+        console.log("Error while fetching the products in ViewAll component!");
+      }
+      
+    };
+
+    fetchProducts();
+  }, [props.contName]);
+
+
+WHY YOU DIDN’T MENTION THE FILE NAME (ROUTE.JS)
+
+In Next.js App Router, the file must be named route.js (or route.ts).
+The folder name (e.g., products) decides the API endpoint path.
+Next.js automatically looks for route.js inside that folder to handle requests.
+
+app/
+ └── api/
+      └── products/
+           └── route.js
+           ➡️ The API endpoint becomes:
+                /api/
+                
+🔹 WHAT IF YOU HAD MULTIPLE FILES LIKE
+
+app/
+ └── api/
+      └── products/
+           └── route.js       <-- /api/products
+           └── details/
+                └── route.js  <-- /api/products/details
+           └── stats/
+                └── route.js  <-- /api/products/stats
+
+                Only one route.js is allowed per folder.
+                If you want multiple endpoints, you create subfolders with their own route.js.
+

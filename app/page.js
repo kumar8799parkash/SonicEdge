@@ -43,9 +43,9 @@ export default function Home() {
     <>
       <Navbar />
       <MainImage />
-      <ViewAll contName = {'saleIsLive'}/>
-      <ViewAll contName = {'bigDeals'}/>
-      <ViewAll contName = {'topPicks'}/>
+      <ViewAll contName = 'saleislive' heading = 'Sale is live'/>
+      <ViewAll contName = 'bigdeals' heading = 'Big deals'/>
+      <ViewAll contName = 'toppicks' heading = 'Top picks'/>
     </>
   );
 }
