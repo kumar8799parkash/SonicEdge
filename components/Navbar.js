@@ -20,7 +20,7 @@ const Navbar = () => {
 
             <div className="content">
               <Link className='drop-down-item' href="/">
-                <div className="drop-down-item-image-cont h-[100%] w-[25%] flex items-center justify-center"><img className=' w-[65%]' src="/public/JSON-data/categoriesImages.json" alt="" /></div>
+                <div className="drop-down-item-image-cont h-[100%] w-[25%] flex items-center justify-center"><img className=' w-[65%]' src="/JSON-data/categoriesImages.json" alt="" /></div>
                 <div className="drop-down-item-name-cont h-[100%] w-[75%] text-[13px] flex items-center">True Wireless Earbuds</div>
               </Link>
 

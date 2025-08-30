@@ -10,7 +10,7 @@ const ViewAll = (props) => {
     const fetchProducts = async () => {
 
       try {
-        const res = await fetch(`/api/products?category=${props.contName}`);
+        const res = await fetch(`/api/products?category=${props.category}`);
         const data = await res.json();
         setProducts(data);
       }catch(err){
@@ -20,7 +20,7 @@ const ViewAll = (props) => {
     };
 
     fetchProducts();
-  }, [props.contName]);
+  }, [props.category]);
 
   return (
     <div className='h-auto w-full'>
