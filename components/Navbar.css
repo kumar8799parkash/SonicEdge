@@ -37,21 +37,23 @@ li {
 
 .content {
     position: absolute;
-    width: 560px;
+    width: 580px;
+    padding: 0px 10px;
     top: 82px;
     left: 0px;
     display: none;
     flex-wrap: wrap;
     background-color: white;
-    border-radius: 15px;
     overflow: hidden;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
-.drop-down:hover .content {
-    display: flex;
+.drop-down:hover {
+    .content{
+        display: flex;
+    }
 }
-
-
 
 .drop-down-item {
     height: 60px;
@@ -59,6 +61,11 @@ li {
     cursor: pointer;
     display: flex;
     align-items: center;
+    border-radius: 8px;
+}
+
+.drop-down-item:hover {
+    background-color: rgb(246, 246, 246);
 }
 
 .hamburger-cont{

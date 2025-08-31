@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div>
       <div className="nav  h-[12vh]  w-full flex items-center px-[10px] justify-between border-[1px] border-[#cbcbcb]">
-        <div className="brand-cont flex gap-2 items-center">
+        <div className="brand-cont flex gap-3 items-center">
           <div className="brand-image-cont"><img className='w-[40px]' src="/images/sonicEdgeLogo.png" alt="" /></div>
           <div className="brand-name-cont">Sonic edge</div>
           <div className="hamburger-cont"><img src="/images/SVGs/hamburger.svg" className='w-7 mr-2 cursor-pointer' alt="" /></div>
@@ -20,7 +20,7 @@ const Navbar = () => {
 
             <div className="content">
               <Link className='drop-down-item' href="/">
-                <div className="drop-down-item-image-cont h-[100%] w-[25%] flex items-center justify-center"><img className=' w-[65%]' src="/JSON-data/categoriesImages.json" alt="" /></div>
+                <div className="drop-down-item-image-cont h-[100%] w-[25%] flex items-center justify-center"><img className=' w-[65%]' src="/images/categoriesImages/trueWirelessEarbuds.webp" alt="" /></div>
                 <div className="drop-down-item-name-cont h-[100%] w-[75%] text-[13px] flex items-center">True Wireless Earbuds</div>
               </Link>
 

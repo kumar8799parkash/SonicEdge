@@ -13,7 +13,7 @@ const SongItem = (props) => {
                     <div className="song-item-price text-[16px] font-bold ">&#8377;{props.price}</div>
                     <div className="song-item-cart flex border-2 border-[#b9b9b97c]  rounded-[5px] overflow-hidden">
                         <div className="decrement-cont  border-r-2 border-[#b9b9b97c] h-6 w-6 flex justify-center items-center text-3xl">-</div>
-                        <div className="count-cont h-6 w-6 flex justify-center items-center">2</div>
+                        <div className="count-cont h-6 w-6 flex justify-center items-center">0</div>
                         <div className="increment-cont border-l-2 border-[#b9b9b97c] h-6 w-6 flex justify-center items-center text-2xl">+</div>
                     </div>
                 </div>
