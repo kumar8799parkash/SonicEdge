@@ -1,9 +1,27 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import './Navbar.css'
+import DropDownItem from './DropDownItem'
 
 const Navbar = () => {
 
+  const [dropDownItems , setDropDownItems] = useState([]);
+  
+  useEffect(()=>{
+    const loadDropDownItems = async()=>{
+      try{
+        const res = await fetch(`/api/products?category=dropDown`)
+        const data = await res.json();
+
+        setDropDownItems(data);
+      }catch(err){
+        console.log("error while fetching the dropDown items in Navbar.js file")
+      }
+    }
+
+    loadDropDownItems();
+  } , []);
 
   return (
     <div>
@@ -19,52 +37,19 @@ const Navbar = () => {
           <li className='main-nav-item drop-down' ><Link href="/">Categories</Link> <img className='w-4' src="/images/SVGs/dropDown.svg" alt="" />
 
             <div className="content">
-              <Link className='drop-down-item' href="/">
-                <div className="drop-down-item-image-cont h-[100%] w-[25%] flex items-center justify-center"><img className=' w-[65%]' src="/images/categoriesImages/trueWirelessEarbuds.webp" alt="" /></div>
-                <div className="drop-down-item-name-cont h-[100%] w-[75%] text-[13px] flex items-center">True Wireless Earbuds</div>
-              </Link>
 
+              {
+                (dropDownItems.length > 0) ? (
+                  dropDownItems.map((dropDownItem)=>{
+                    return (
+                      <DropDownItem id = {dropDownItem._id} name = {dropDownItem.name} image = {dropDownItem.image}/>
+                    )
+                  })
+                ) : (
+                  <p>No product found in dropDown category</p>
+                )
+              }
 
-              <Link className='drop-down-item' href="/">
-                <div className="drop-down-item-image-cont h-[100%] w-[25%] flex items-center justify-center"><img className=' w-[65%]' src="/images/categoriesImages/wirelessSpeakers.webp" alt="" /></div>
-                <div className="drop-down-item-name-cont h-[100%] w-[75%] text-[13px] flex items-center">Wireless Speakers</div>
-              </Link>
-
-              <Link className='drop-down-item' href="/">
-                <div className="drop-down-item-image-cont h-[100%] w-[25%] flex items-center justify-center"><img className=' w-[65%]' src="/images/categoriesImages/neckbands.png" alt="" /></div>
-                <div className="drop-down-item-name-cont h-[100%] w-[75%] text-[13px] flex items-center">Neckbands</div>
-              </Link>
-
-              <Link className='drop-down-item' href="/">
-                <div className="drop-down-item-image-cont h-[100%] w-[25%] flex items-center justify-center"><img className=' w-[65%]' src="/images/categoriesImages/smartWatches.webp" alt="" /></div>
-                <div className="drop-down-item-name-cont h-[100%] w-[75%] text-[13px] flex items-center">Smart Watches</div>
-              </Link>
-
-
-              <Link className='drop-down-item' href="/">
-                <div className="drop-down-item-image-cont h-[100%] w-[25%] flex items-center justify-center"><img className=' w-[65%]' src="/images/categoriesImages/wiredHeadphones.png" alt="" /></div>
-                <div className="drop-down-item-name-cont h-[100%] w-[75%] text-[13px] flex items-center">Wired Headphones</div>
-              </Link>
-
-              <Link className='drop-down-item' href="/">
-                <div className="drop-down-item-image-cont h-[100%] w-[25%] flex items-center justify-center"><img className=' w-[65%]' src="/images/categoriesImages/wirelessHeadphones.webp" alt="" /></div>
-                <div className="drop-down-item-name-cont h-[100%] w-[75%] text-[13px] flex items-center">Wireless Headphones</div>
-              </Link>
-
-              <Link className='drop-down-item' href="/">
-                <div className="drop-down-item-image-cont h-[100%] w-[25%] flex items-center justify-center"><img className=' w-[65%]' src="/images/categoriesImages/wiredEarphones.webp" alt="" /></div>
-                <div className="drop-down-item-name-cont h-[100%] w-[75%] text-[13px] flex items-center">Wired Earphones</div>
-              </Link>
-
-              <Link className='drop-down-item' href="/">
-                <div className="drop-down-item-image-cont h-[100%] w-[25%] flex items-center justify-center"><img className=' w-[65%]' src="/images/categoriesImages/soundbars.png" alt="" /></div>
-                <div className="drop-down-item-name-cont h-[100%] w-[75%] text-[13px] flex items-center">Soundbars</div>
-              </Link>
-
-              <Link className='drop-down-item' href="/">
-                <div className="drop-down-item-image-cont h-[100%] w-[25%] flex items-center justify-center"><img className=' w-[65%]' src="/images/categoriesImages/gamingHeadphones.png" alt="" /></div>
-                <div className="drop-down-item-name-cont h-[100%] w-[75%] text-[13px] flex items-center">Gaming Headphones</div>
-              </Link>
             </div>
 
 

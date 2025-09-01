@@ -1,0 +1,12 @@
+.drop-down-item {
+    height: 60px;
+    width: 280px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.drop-down-item:hover {
+    background-color: rgb(246, 246, 246);
+}
