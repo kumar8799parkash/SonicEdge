@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from "@/components/Navbar";
 import MainImage from "@/components/MainImage";
 import ViewAll from "@/components/ViewAll";
+import Categories from "@/components/Categories";
 
 export default function Home() {
 
@@ -13,6 +14,7 @@ export default function Home() {
       <MainImage />
       <ViewAll category = 'saleIsLive' heading = 'Sale is live'/>
       <ViewAll category = 'bigDeals' heading = 'Big deals'/>
+      <Categories category = 'dropDown' heading = 'Shop by Categories'/>
       <ViewAll category = 'topPicks' heading = 'Top Picks For You'/>
     </>
   );

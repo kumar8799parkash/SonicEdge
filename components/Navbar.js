@@ -42,7 +42,7 @@ const Navbar = () => {
                 (dropDownItems.length > 0) ? (
                   dropDownItems.map((dropDownItem)=>{
                     return (
-                      <DropDownItem id = {dropDownItem._id} name = {dropDownItem.name} image = {dropDownItem.image}/>
+                      <DropDownItem key = {dropDownItem._id} name = {dropDownItem.name} image = {dropDownItem.image}/>
                     )
                   })
                 ) : (
