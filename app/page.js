@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import MainImage from "@/components/MainImage";
 import ViewAll from "@/components/ViewAll";
 import Categories from "@/components/Categories";
+import BestSellers from "@/components/BestSellers";
 
 export default function Home() {
 
@@ -16,6 +17,7 @@ export default function Home() {
       <ViewAll category = 'bigDeals' heading = 'Big deals'/>
       <Categories category = 'dropDown' heading = 'Shop by Categories'/>
       <ViewAll category = 'topPicks' heading = 'Top Picks For You'/>
+      <BestSellers category = 'bestSellers' heading = 'Explore Bestsellers'/>
     </>
   );
 }

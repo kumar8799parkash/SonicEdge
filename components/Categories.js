@@ -22,7 +22,7 @@ const Categories = (props) => {
 
 
     return (
-        <div className='mb-8'>
+        <div className='mb-12'>
             <div className="categories-heading-cont py-3 w-full px-12.5 flex justify-between">
                 <div className="categories-heading text-[24px] text-[rgb(26, 32, 36)] font-[600]">{props.heading}</div>
                 <div className="view-all-text text-sm text-[#2f5b96] font-[700] flex gap-1 items-center cursor-pointer">View All <img className='w-5 h-5' src="/images/SVGs/viewAll.svg" alt="" /></div>
