@@ -25,7 +25,7 @@ const BestSellers = (props) => {
         <div>
             <div className="bestSellers-cont pb-12">
                 <div className="bestSellers-heading-cont py-3 w-full px-12.5 flex justify-between text-[24px] text-[rgb(26, 32, 36)] font-[600]">{props.heading}</div>
-                <div className="bestSellers-items-cont flex gap-[20px] justify-center">
+                <div className="bestSellers-items-cont flex gap-[20px] justify-center flex-wrap">
 
                     {
                         (bestSellerVideos.length > 0) ? (
@@ -36,7 +36,6 @@ const BestSellers = (props) => {
                                         name = {video.name}
                                         video = {video.image}
                                     />
-                                
                                 )
                             })
                         ):(

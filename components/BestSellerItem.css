@@ -1,0 +1,14 @@
+@media (max-width : 1000px) {
+    .bestSeller-item-video-cont{
+        width: 30vw;
+    }
+}
+
+@media (max-width : 768px) {
+    .bestSeller-item-video-cont{
+        width: 45vw;
+    }
+    .bestSeller-item-name-cont{
+        font-size: 12px;
+    }
+}
