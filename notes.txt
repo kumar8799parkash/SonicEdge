@@ -383,3 +383,72 @@ app/
                 Only one route.js is allowed per folder.
                 If you want multiple endpoints, you create subfolders with their own route.js.
 
+
+
+
+
+PARAMS, PROPS AND SLUG CONCEPTS
+
+props in react : In plain React (not specific to Next.js), props = properties passed to a component by its parent.
+                 exapmle :  props = {name='Jarvis' , id='ChatGPT'}, here props is available as a json
+
+params in NextJS: In Next.js App Router (the app/ folder), the page.js component automatically receives an object with:
+                  params → dynamic route parameters (from the URL).
+                  searchParams → query string parameters (from ?key=value in the URL).
+
+                  example : URL : // app/blog/[slug]/page.js      
+                            params = { slug: "javascript" }       (let user passed javascript in place of slug)
+
+                  👉 So params is a special kind of props that Next.js injects for dynamic routing.
+
+
+
+******🔹 3. Relationship Between params and props
+
+In Next.js, the page component receives props automatically.
+Inside those props, one of the keys is params (and another is searchParams).
+
+So:
+props = the whole object passed into the page component.
+params = one property inside props (specific to dynamic routes).
+
+
+// If you go to /blog/js
+props = {                                 props contains params as of its elements
+  params: { slug: "js" },
+  searchParams: {}
+}
+
+So you can either destructure:
+function Page({ params }) { ... }
+
+or use full props:
+
+function Page(props) {
+   console.log(props.params.slug);
+}
+
+🔹 5. Quick Analogy
+
+Props: A box of data handed over by the parent component.
+Params: A special gift inside that box, automatically packed by Next.js when the URL has dynamic parts.
+
+
+
+The name you put inside the square brackets [ ] in Next.js becomes the key name inside params.
+
+example : app/blog/[customSlug]/page.js
+
+now :   URL → /blog/javascript
+        params = { customSlug: "javascript" }
+
+
+⚡ Pro tip:
+
+If you have multiple dynamic segments like:
+
+app/blog/[year]/[customSlug]/page.js
+
+Visiting /blog/2025/react-hooks gives:
+params = { year: "2025", customSlug: "react-hooks" }
+
