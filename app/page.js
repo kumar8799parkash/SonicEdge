@@ -11,7 +11,6 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
       <MainImage />
       <ViewAll category = 'saleIsLive' heading = 'Sale is live'/>
       <ViewAll category = 'bigDeals' heading = 'Big deals'/>

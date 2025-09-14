@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import CategoryItem from './CategoryItem'
+import Link from 'next/link'
 import './Categories.css'
 
 const Categories = (props) => {
@@ -33,11 +34,11 @@ const Categories = (props) => {
                 {categoryItems.length > 0 ? (
                     categoryItems.map((categoryItem)=>{
                         return (
-                            <CategoryItem  key={categoryItem._id}   name={categoryItem.name}  image={categoryItem.image} />
+                            <Link href={`/category/${props.category}`} ><CategoryItem  key={categoryItem._id}   name={categoryItem.name}  image={categoryItem.image} /></Link>
                         )
                     })
                 ) : (
-                    <p>No product find in categories.js component!</p>
+                    <p>No product found in categories.js component!</p>
                 )}
 
                 {/* <div className="category-item w-[140px] cursor-pointer">
