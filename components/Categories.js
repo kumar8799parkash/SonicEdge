@@ -34,7 +34,7 @@ const Categories = (props) => {
                 {categoryItems.length > 0 ? (
                     categoryItems.map((categoryItem)=>{
                         return (
-                            <Link href={`/category/${props.category}`} ><CategoryItem  key={categoryItem._id}   name={categoryItem.name}  image={categoryItem.image} /></Link>
+                            <Link href={`/category/${categoryItem.name}`} key={categoryItem._id} ><CategoryItem  key={categoryItem._id}   name={categoryItem.name}  image={categoryItem.image} /></Link>
                         )
                     })
                 ) : (
