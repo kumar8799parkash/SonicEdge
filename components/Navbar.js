@@ -31,12 +31,12 @@ const Navbar = () => {
           <div className="brand-name-cont">Sonic edge</div>
           <div className="hamburger-cont"><img src="/images/SVGs/hamburger.svg" className='w-7 mr-2 cursor-pointer' alt="" /></div>
         </div>
-        <div className="main-nav-cont flex">
+        <div className="main-nav-cont flex ">
 
           <li className='main-nav-item' ><Link href="/">Home</Link></li>
-          <li className='main-nav-item drop-down' ><Link href="/">Categories</Link> <img className='w-4' src="/images/SVGs/dropDown.svg" alt="" />
+          <li className='main-nav-item drop-down ' ><Link href="/">Categories</Link> <img className='w-4 cursor-pointer' src="/images/SVGs/dropDown.svg" alt="" />
 
-            <div className="content">
+            <div className="content ">
 
               {
                 (dropDownItems.length > 0) ? (

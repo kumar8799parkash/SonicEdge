@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
 
-/* * {
+/* *{
     outline: 1px solid red;
 } */
 
@@ -36,8 +36,10 @@ li {
 
 
 .content {
+    border: 1px solid #cbcbcb;
+    border-top: none;
     position: absolute;
-    width: 580px;
+    width: 582px;
     padding: 0px 10px;
     top: 82px;
     left: 0px;
