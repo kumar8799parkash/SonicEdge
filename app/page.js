@@ -12,7 +12,7 @@ export default function Home() {
       <MainImage />
       <ViewAll category = 'saleIsLive' heading = 'Sale is live'/>
       <ViewAll category = 'bigDeals' heading = 'Big deals'/>
-      <Categories category = 'dropDown' heading = 'Shop by Categories'/>
+      <Categories heading = 'Shop by Categories'/>
       <ViewAll category = 'topPicks' heading = 'Top Picks For You'/>
       <BestSellers category = 'bestSellers' heading = 'Explore Bestsellers'/>
     </>

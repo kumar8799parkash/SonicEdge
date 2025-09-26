@@ -4,14 +4,14 @@ import CategoryItem from './CategoryItem'
 import Link from 'next/link'
 import './Categories.css'
 
-const Categories = (props) => {
+const Categories = (props) => {   // props = dropdown and heading
 
     const [categoryItems, setCategoryItems] = useState([]);
 
     useEffect(()=>{
         const fetchData = async () => {
             try{
-                const res = await fetch(`/api/products?category=${props.category}`);
+                const res = await fetch(`/api/category/`);
                 const data = await res.json();
                 setCategoryItems(data);
             }catch(err){
@@ -34,7 +34,7 @@ const Categories = (props) => {
                 {categoryItems.length > 0 ? (
                     categoryItems.map((categoryItem)=>{
                         return (
-                            <Link href={`/category/${categoryItem.name}`} key={categoryItem._id} ><CategoryItem  key={categoryItem._id}   name={categoryItem.name}  image={categoryItem.image} /></Link>
+                            <Link href={`/categoryPage/${categoryItem.name}`} key={categoryItem._id} ><CategoryItem  key={categoryItem._id}   name={categoryItem.name}  image={categoryItem.image} /></Link>
                         )
                     })
                 ) : (
