@@ -4,14 +4,14 @@ import CategoryItem from './CategoryItem'
 import Link from 'next/link'
 import './Categories.css'
 
-const Categories = (props) => {   // props = dropdown and heading
+const Categories = (props) => {   // heading
 
     const [categoryItems, setCategoryItems] = useState([]);
 
     useEffect(()=>{
         const fetchData = async () => {
             try{
-                const res = await fetch(`/api/category/`);
+                const res = await fetch(`/api/category`);
                 const data = await res.json();
                 setCategoryItems(data);
             }catch(err){
